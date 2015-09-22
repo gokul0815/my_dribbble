@@ -21,6 +21,6 @@ group :development, :test do
   gem 'spring'
 end
 
-groupd :production do
+group :production do
 	gem 'pg', '~> 0.18.3'
 end
