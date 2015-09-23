@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml', '~> 4.0.7'
 gem 'devise', '~> 3.5.2'
 gem 'simple_form', '~> 3.2.0'
