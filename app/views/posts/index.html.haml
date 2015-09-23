@@ -1,6 +1,32 @@
-- @posts.each do |post|
-	= link_to (image_tag post.image.url(:small)), post
-	%h2= link_to post.title, post
+- if user_signed_in?
+	%p#intro
+		Hello
+		=	current_user.name
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.
+- else 
+	%p#intro
+		What's your muse?
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.
+
+%posts
+	- @posts.each do |post|
+	.post
+		.post-image
+			= link_to (image_tag post.image.url(:small)), post
+		.post_content
+			.title
+				%h2= link_to post.title, post
+			.data.cleafix
+				%p.username
+					Shared by
+					= post.user.name
+				%p.buttons
+					%span
+						%i		
 	%p
 		= post.comments.count
 		Comments
